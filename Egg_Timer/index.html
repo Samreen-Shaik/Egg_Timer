@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Egg Timer with MP4 Animations</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Egg Timer ⏳🥚</h1>
+      <div class="toggle-container">
+        <label class="switch">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider round"></span>
+        </label>
+        <span>Dark Mode</span>
+      </div>
+    </header>
+
+    <section class="settings">
+      <div class="boil-options">
+        <h2>Select Boiling Level:</h2>
+        <label>
+          <input type="radio" name="boilTime" value="180" />
+          <div class="preset-option">
+            <img src="images/soft-boiled-egg.png" alt="Soft Boiled Egg" class="preset-img" />
+            <span>Soft (3 min)</span>
+          </div>
+        </label>
+        <label>
+          <input type="radio" name="boilTime" value="300" />
+          <div class="preset-option">
+            <img src="images/medium-boiled-egg.png" alt="Medium Boiled Egg" class="preset-img" />
+            <span>Medium (5 min)</span>
+          </div>
+        </label>
+        <label>
+          <input type="radio" name="boilTime" value="420" />
+          <div class="preset-option">
+            <img src="images/hard-boiled-egg.png" alt="Hard Boiled Egg" class="preset-img" />
+            <span>Hard (7 min)</span>
+          </div>
+        </label>
+      </div>
+      <div class="custom-time">
+        <h2>Or set custom time (minutes):</h2>
+        <input type="number" id="minutes" placeholder="Minutes" />
+      </div>
+    </section>
+
+    <div class="egg-container">
+      <!-- Using a video element for egg animations -->
+      <video id="egg" autoplay muted loop playsinline>
+        <source src="images/raw-egg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="steam-container">
+        <div class="steam"></div>
+        <div class="steam"></div>
+        <div class="steam"></div>
+      </div>
+    </div>
+
+    <div class="timer-controls">
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
+      <button id="reset">Reset</button>
+    </div>
+
+    <h2 id="countdown">00:00</h2>
+  </div>
+
+  <audio id="alarm" src="alarm.wav"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
